@@ -1,0 +1,11 @@
+platforms/
+plugins/
+node_modules/
+typings/
+
+!.keep
+
+.DS_Store
+.vscode/
+*.code-workspace
+
