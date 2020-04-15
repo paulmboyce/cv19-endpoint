@@ -11,7 +11,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "lint": "eslint endpoint.js endpoint.test.js routes/*.js /*.js routes/*test.js --fix --no-error-on-unmatched-pattern"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -22,6 +23,13 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "jest": "^25.3.0"
   }
 }
