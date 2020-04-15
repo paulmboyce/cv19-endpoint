@@ -15,21 +15,6 @@ it('Async test', async () => {
     });
 });
 
-/*
-it('Gets the test endpoint', async (done) => {
-    try {
-        // Sends GET Request to /test endpoint
-        const res = await request.get('/io/summary');
-        console.log(res.body);
-        expect(res.statusCode).toBe(200);
-        expect(res.body).toEqual({ oneWeek: 83, twoWeeks: 348 });
-        done();
-    } catch (err) {
-        done('ERROR: ' + err);
-    }
-});
-*/
-
 it('Gets the test endpoint (Async, returns a Promise).', async () => {
     // Sends GET Request to /test endpoint
     return request.get('/io/summary').then(res => {
