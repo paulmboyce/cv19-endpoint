@@ -22,3 +22,17 @@ it('Gets the test endpoint (Async, returns a Promise).', async () => {
         expect(res.body).toEqual({ oneWeek: 83, twoWeeks: 348 });
     });
 });
+
+it('Updates status, receives back status. (Async, returns a Promise).', async () => {
+    // ARRANGE:
+    const DATA = { tested: 1, positive: 0, recovered: 1 };
+    // ACT:
+    return request.post('/io/status')
+        .send(DATA)
+        .then(res => {
+            console.log(`RESPONSE.BODY: ${JSON.stringify(res.body)}`);
+            // ASSERT:
+            expect(res.statusCode).toBe(200);
+            expect(res.body).toEqual(DATA);
+        });
+});
